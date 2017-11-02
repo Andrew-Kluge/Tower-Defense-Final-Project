@@ -100,8 +100,12 @@
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
 'Assets/Code/Cell.cs'
+'Assets/Code/Def_Tower.cs'
+'Assets/Code/Game.cs'
 'Assets/Code/Health_Bar.cs'
 'Assets/Code/Home_Base.cs'
+'Assets/Code/Opponent.cs'
+'Assets/Code/Spawn.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/UnityScript.dll'
