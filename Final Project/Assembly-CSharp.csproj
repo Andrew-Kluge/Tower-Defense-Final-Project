@@ -52,6 +52,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\BulletManager.cs" />
+    <Compile Include="Assets\Code\Bullets.cs" />
     <Compile Include="Assets\Code\Cell.cs" />
     <Compile Include="Assets\Code\Def_Tower.cs" />
     <Compile Include="Assets\Code\Game.cs" />
@@ -59,6 +61,8 @@
     <Compile Include="Assets\Code\Home_Base.cs" />
     <Compile Include="Assets\Code\Opponent.cs" />
     <Compile Include="Assets\Code\Spawn.cs" />
+    <Compile Include="Assets\Code\Turret_Rot.cs" />
+    <Compile Include="Assets\Code\turretrotate.cs" />
     <Reference Include="UnityEngine.Analytics">
       <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
     </Reference>

@@ -20,7 +20,7 @@ public class Home_Base : MonoBehaviour
 
 	private void OnCollisionEnter(Collision other)
 	{
-		_health -= 20;
+		_health -= 10;
 		if (_health < 0)
 			slider.value = 0;
 		else

@@ -19,9 +19,9 @@ public class Spawn : MonoBehaviour {
 		hazard = Resources.Load("Mook") as GameObject;
 		hazardCount = 5;
 		spawnValues = gameObject.transform.position;
-		spawnWait = 2.0f;
+		spawnWait = 1.0f;
 		startWait = 2.0f;
-		waveWait = 10.0f;
+		waveWait = 2.0f;
 	}
 
 	IEnumerator SpawnWaves()

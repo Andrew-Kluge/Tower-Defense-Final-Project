@@ -9,7 +9,7 @@ namespace Code
 	public class Opponent : MonoBehaviour
 	{
 
-		private int _killit;
+		public int _killit;
 		public Transform _targ;
 		private float _velocity;
 
@@ -34,6 +34,8 @@ namespace Code
 		{
 			if (other.gameObject.CompareTag("Base"))
 				Die();
+			if (other.gameObject.CompareTag("Bullet"))
+				_killit -= 3;
 		}
 
 		void Die()
