@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullets : MonoBehaviour {
 
-	public Transform _targ;
+	public Vector3 _targ;
 	private float _velocity;
 	private float _lifetime;
 	private float _starttime;
@@ -14,7 +14,7 @@ public class Bullets : MonoBehaviour {
 	public void Initialize (GameObject target)
 	{
 		_velocity = 5f;
-		_targ = target.transform;
+		_targ = target.transform.position;
 		_lifetime = 1f;
 		_starttime = Time.time;
 	}
@@ -23,8 +23,13 @@ public class Bullets : MonoBehaviour {
 	void Update () {
 		if (Time.time > _lifetime + _starttime)
 			Die();
+        //get vector between enemy and base and normalize it 
+        Vector3 bulletLeadVector = FindObjectOfType<Home_Base>().transform.position - _targ;
+        bulletLeadVector /= bulletLeadVector.magnitude;
+        bulletLeadVector *= 0.5f;
+
 		transform.position = Vector3.MoveTowards(transform.position,
-			new Vector3(_targ.position.x, transform.position.y, _targ.position.z), _velocity * Time.deltaTime);
+			new Vector3(_targ.x+bulletLeadVector.x, _targ.y + 0.5f, _targ.z+bulletLeadVector.z), _velocity * Time.deltaTime);
 	}
 	
 	private void OnCollisionEnter(Collision other)

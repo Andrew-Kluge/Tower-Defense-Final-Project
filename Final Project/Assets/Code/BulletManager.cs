@@ -18,7 +18,7 @@ public class BulletManager : MonoBehaviour {
 	public void ForceSpawn (GameObject target)
 	{
 		GameObject bullet = (GameObject)Object.Instantiate(_bullet, transform.position, transform.rotation);
-		bullet.transform.SetParent(gameObject.transform);
+		//bullet.transform.SetParent(gameObject.transform);
 		bullet.GetComponent<Bullets>().Initialize(target);
 	}
 }

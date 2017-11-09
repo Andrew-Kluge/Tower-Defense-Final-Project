@@ -25,7 +25,7 @@ namespace Code
 		void Update()
 		{
 			if (_killit <= 0)
-				Die();
+				DieSad();
 			transform.position = Vector3.MoveTowards(transform.position,
 				new Vector3(_targ.position.x, transform.position.y, _targ.position.z), _velocity * Time.deltaTime);
 		}
@@ -33,14 +33,26 @@ namespace Code
 		private void OnCollisionEnter(Collision other)
 		{
 			if (other.gameObject.CompareTag("Base"))
-				Die();
+				DieHappy();
 			if (other.gameObject.CompareTag("Bullet"))
 				_killit -= 3;
 		}
 
-		void Die()
+        // We die sad if we were killed by a turret
+        // in this case, we increase the player's money
+		void DieSad()
 		{
-			Destroy(gameObject);
+            Destroy(gameObject);
+            Home_Base hb = FindObjectOfType<Home_Base>();
+            hb._money += 2.0f;
+            hb.money_text.text = "$" + hb._money;   
+
 		}
+
+        // We die happy if we ran into the base
+        void DieHappy()
+        {
+            Destroy(gameObject);
+        }
 	}
 }

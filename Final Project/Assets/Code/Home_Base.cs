@@ -8,7 +8,9 @@ public class Home_Base : MonoBehaviour
 
 	private Health_Bar _survival;
 	private float _health;
+    public float _money;
 	public Slider slider;
+    public Text money_text;
 	
 	// Use this for initialization
 	void Start ()
@@ -16,6 +18,10 @@ public class Home_Base : MonoBehaviour
 		slider = FindObjectOfType<Slider>();
 		_health = slider.value;
 		_survival = GetComponent<Health_Bar>();
+        _money = 10.0f;
+        money_text = GameObject.FindGameObjectWithTag("Money").GetComponent<Text>();
+
+        money_text.text = "$" + _money.ToString();
 	}
 
 	private void OnCollisionEnter(Collision other)
